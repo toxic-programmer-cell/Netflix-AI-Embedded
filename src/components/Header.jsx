@@ -1,7 +1,9 @@
+import logo from "../../public/Netflix_Logo_PMS.png";
+
 const Header = () => {
   return (
-    <div>
-      <h1>Header</h1>
+    <div className="absolute px-18 py-2 bg-gradient-to-b from-black z-99">
+      <img className="w-45" src={logo} alt="logo" />
     </div>
   );
 };

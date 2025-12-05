@@ -2,6 +2,7 @@
 
 - created Vite app
 - configured tailwind
+- Header
 
 # Features
 
