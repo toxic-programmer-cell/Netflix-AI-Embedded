@@ -1,5 +1,5 @@
 import Header from "./Header";
-import bgimg from "../../public/Background.jpg";
+import bgimg from "../assets/Background.jpg";
 
 const Login = () => {
   return (
@@ -20,27 +20,27 @@ const Login = () => {
           >
             <h2 className="font-extrabold text-3xl my-5">Sign in</h2>
             <input
-              className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-white text-gray-900 text-sm"
+              className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-gray-900/60 text-white text-sm"
               type="text"
               placeholder="Email or Mobile number"
             />
             <input
-              className="px-2 py-3 my-3 border border-gray-300 rounded-md bg-white text-gray-900 text-sm"
+              className="px-2 py-3 my-3 border border-gray-300 rounded-md bg-gray-900/60 text-white text-sm"
               type="password"
               placeholder="Password"
             />
-            <button className="p-2 my-3 bg-red-600 rounded font-bold">
+            <button className="p-2 my-3 bg-red-600 rounded font-bold cursor-pointer hover:bg-red-500 duration-200">
               Sign in
             </button>
             <span className="flex w-full items-center justify-center font-bold text-lg uppercase">
               or
             </span>
             <p className="flex w-full items-center justify-center">
-              Don't have an account?
+              Don't have an account? &nbsp;
+              <span className="cursor-pointer hover:text-blue-700 hover:underline duration-200">
+                Sign up now
+              </span>
             </p>
-            <button className="p-2 my-2 bg-gray-600 rounded font-bold">
-              Sign up
-            </button>
           </form>
         </div>
       </div>
