@@ -13,6 +13,11 @@ const Login = () => {
   const handleSubmit = () => {
     // Validation
 
+    if (!email.current.value || !password.current.value) {
+      setErrMessage("Email and Password are required");
+      return;
+    }
+
     const message = checkValidateData(
       email.current.value,
       password.current.value
@@ -53,15 +58,20 @@ const Login = () => {
               />
             )}
             <input
+              ref={email}
               className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-gray-900/40 text-white text-sm"
               type="text"
               placeholder="Email"
             />
             <input
+              ref={password}
               className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-gray-900/40 text-white text-sm"
               type="password"
               placeholder="Password"
             />
+            {errMessage && (
+              <p className="text-center text-red-500">{errMessage}</p>
+            )}
             <button
               className="p-2 my-3 bg-red-600 rounded font-bold cursor-pointer hover:bg-red-400 ease-in-out duration-300"
               onClick={handleSubmit}
@@ -72,14 +82,14 @@ const Login = () => {
               or
             </span>
             <p className="flex w-full items-center justify-center">
-              Don't have an account?
+              {isSignIn ? "New to Netflix?" : "Already have account"} &nbsp;
+              <span
+                className="hover:text-blue-500 underline cursor-pointer"
+                onClick={toggleSignInForm}
+              >
+                {isSignIn ? "Sign Up" : "Sign In"}
+              </span>
             </p>
-            <button
-              className="p-2 my-2 bg-gray-600 rounded font-bold cursor-pointer hover:bg-gray-400 ease-in-out duration-300"
-              onClick={toggleSignInForm}
-            >
-              Sign up
-            </button>
           </form>
         </div>
       </div>
