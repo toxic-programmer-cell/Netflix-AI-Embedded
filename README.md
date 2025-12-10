@@ -8,6 +8,8 @@
 - Sign Up Form
 - Form Validation
 - useRef Hook
+- Firebase setup
+- Deployment
 
 # Features
 
@@ -24,3 +26,7 @@
 - Netflix GPT
   - Search Bar
   - Movie Suggestion
+
+# Achievements / Accomplishments
+
+- firebase config 404 error --Working

@@ -2,6 +2,8 @@ import Header from "./Header";
 import bgimg from "../assets/Background.jpg";
 import { useRef, useState } from "react";
 import { checkValidateData } from "../utils/validate";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -12,12 +14,34 @@ const Login = () => {
 
   const handleSubmit = () => {
     // Validation
-
     const message = checkValidateData(
       email.current.value,
       password.current.value
     );
     setErrMessage(message);
+    if (message) return;
+
+    // Sign In or Sign Up
+    if (!isSignIn) {
+      // Sign Up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log("User created:", user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log("Error:", errorCode, errorMessage);
+          setErrMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      // Sign In functionality to be implemented
+    }
   };
 
   const toggleSignInForm = () => {
