@@ -1,5 +1,5 @@
 import Header from "./Header";
-import bgimg from "../../public/Background.jpg";
+import bgimg from "../assets/Background.jpg";
 
 const Login = () => {
   return (
@@ -13,23 +13,24 @@ const Login = () => {
             alt="bg-image"
           />
         </div>
+        {/* Login Form */}
         <div className="p-4 flex justify-center items-center h-screen">
           <form
             action=""
-            className="bg-black/70 relative p-15 m-5 flex flex-col w-1/3"
+            className="bg-black/70 relative p-15 m-5 flex flex-col w-1/3 max-w-[500px]"
           >
             <h2 className="font-extrabold text-3xl my-5">Sign in</h2>
             <input
-              className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-white text-gray-900 text-sm"
+              className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-gray-900/40 text-white text-sm"
               type="text"
               placeholder="Email or Mobile number"
             />
             <input
-              className="px-2 py-3 my-3 border border-gray-300 rounded-md bg-white text-gray-900 text-sm"
+              className="px-2 py-3 my-3 mx- border border-gray-300 rounded-md bg-gray-900/40 text-white text-sm"
               type="password"
               placeholder="Password"
             />
-            <button className="p-2 my-3 bg-red-600 rounded font-bold">
+            <button className="p-2 my-3 bg-red-600 rounded font-bold cursor-pointer hover:bg-red-400 ease-in-out duration-300">
               Sign in
             </button>
             <span className="flex w-full items-center justify-center font-bold text-lg uppercase">
@@ -38,7 +39,7 @@ const Login = () => {
             <p className="flex w-full items-center justify-center">
               Don't have an account?
             </p>
-            <button className="p-2 my-2 bg-gray-600 rounded font-bold">
+            <button className="p-2 my-2 bg-gray-600 rounded font-bold cursor-pointer hover:bg-gray-400 ease-in-out duration-300">
               Sign up
             </button>
           </form>

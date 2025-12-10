@@ -1,4 +1,4 @@
-import logo from "../../public/Netflix_Logo_PMS.png";
+import logo from "../assets/Netflix_Logo_PMS.png";
 
 const Header = () => {
   return (
